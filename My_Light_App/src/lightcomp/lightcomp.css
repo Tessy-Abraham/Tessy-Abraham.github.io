@@ -1,0 +1,35 @@
+ 
+.container{
+
+    height:175px;
+    width:200px;
+    margin-left:400px;
+    margin-top:20px;
+    padding:10px;
+    flex-direction:row;
+   
+
+}
+
+.light button{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: none;
+    margin: 20px;
+    font-size: 65px;
+    margin-left: -700px;
+    background-color:grey;
+}
+
+.onoff button{
+display:block;
+margin-top:170px;
+margin-left:-385px;
+background-color: white ;
+padding: 7px;
+ width: 60px;
+}
+
+
+
