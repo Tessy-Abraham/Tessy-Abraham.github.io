@@ -1,0 +1,122 @@
+.wid-100{
+    max-width: 100% !important; 
+}
+#menu .nav>li>a, #menu1 .nav>li>a {
+    color: #09357a;
+}
+.pl-pr-10{
+    padding-left: 10px;
+    padding-right: 10px;    
+}
+.mtp-60{
+    margin-top: 60px;
+}
+.welcome-image-area5{
+    
+    background: url(../images/Banner/b1.jpeg);
+   background-size: cover;
+}
+.pdng-30{
+    padding: 30px 0px;
+}
+#menu .nav>li>a:hover, #menu1 .nav>li>a:hover {
+    color: #212529;
+    border-bottom: 5px solid #fff !important;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mt-30{
+    margin-top: 30px !important;
+}
+.mb-30{
+    margin-bottom: 30px;
+}
+#menu .dropdown-menu, #menu1 .dropdown-menu {
+    height: 250px;
+    overflow-y: scroll;
+}
+.bg-blue{
+        background-color: #09357a;
+}
+.video-area-2 {
+    padding: 150px 0px;
+    background: url(../images/Banner/vdo-bg-3.jpg);
+    background-size: cover;
+}
+.mrgn-30{
+    margin: 30px 0px;
+}
+.contact-sec1{
+    border: 1px solid black;
+    padding: 40px;
+    /* padding-bottom: 20px; */
+    background-color: white;
+}
+.contact-area {
+    background-image: url("../images/Banner/bg-4.jpg");
+    background-size: cover;
+}
+.flt-rt{
+    float: right;
+}
+.form-control {
+    margin-bottom: 5px;
+}
+.home-img{
+    height: 170px;
+}
+.footer-widgets {
+    padding: 30px 0px;
+}
+.footer5 .widget p {
+    padding-top: 30px;
+    color: #fff;
+    font-size: 18px;
+}
+.gallery .product-thumb .image .show p {
+    font-size: 22px;
+    color: black;
+    text-transform: uppercase;
+    line-height: 18px;
+    font-weight: bold;
+}
+.gallery .product-thumb .image .show a {
+    font-size: 22px;
+    color: black;
+    line-height: 18px;
+}
+#color-style-switcher {
+    display: none;
+}
+.abt-tle{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px black;
+}
+.abt-img-ht{
+    height: 500px;
+}
+#first-name-err, #last-name-err, #email-err, #mobile-number-err, #password-err, #confirm-password-err{
+    color:red;
+    font-size:13px;
+  }
+  .progress {
+    height: 4px;
+}
+  
+.progress-bar {
+    background-color: green;
+}
+.progress1 {
+    height: 4px;
+}
+  
+.progress-bar1 {
+    background-color: green;
+}
+.activity-tabs .nav-tabs .active {
+    background-color: #3e3e3e;
+    color: #ffffff;
+}
