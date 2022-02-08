@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- PAGE TITLE -->
+    <title>Kerala Tourism - Login</title>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- ALL GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,900" rel="stylesheet">
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="fonts/line-awesome-font-awesome.min.css">
+    <!-- OWL CAROSEL CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- color STYLE CSS -->
+
+
+
+</head>
+
+<body >
+    <!-- START PRELOADER AREA-->
+    <div class="preloader-area">
+        <div class="spinner">
+            
+            <h2>Kerala Tourism</h2>
+        </div>
+    </div>
+    <!-- END PRELOADER AREA -->
+    <!-- START CONTACT DESIGN AREA -->
+    <section id="contact" class="contact-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-lg-6 col-md-6 col-sm-12 contact-sec1">
+                    <!--<div class="row contact-form-design-area">-->
+                    <!-- <div class="col-md-offset-3 col-md-6 m-auto"> -->  
+                        <div class="section-title text-center mb-20">
+                            <h2>Login</h2>
+                            <div class="title-separator-outer ">
+                                <div class="title-separator bg-blue style-liner"></div>
+                            </div>
+                        </div>
+                        <!-- START CONTACT FORM DESIGN AREA -->
+                        <div class="login-form">
+                            <form id="loginform" name="loginform" method="post" action="#">
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Enter Email ID</label>
+                                        <input type="text" name="email" class="form-control" id="email" placeholder="Email" onkeyup="ValidateEmail(document.loginform.email)">
+                                        <div id="email-err"></div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Enter Your Password</label>
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                                        <div id="password-err"></div>
+                                        <span id="password_strength"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="checkbox" name="remember"> Remember
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="register.html" class="flt-rt">Register ?</a>
+                                    </div>
+                                    <div class="col-md-12 text-center login-btn mt-30">
+                                        <div class="actions wow fadeInUp" data-wow-delay=".4s">
+                                            <input type="submit" value="send message" name="submit" class="" title="Submit Your Message!">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- / END CONTACT FORM DESIGN AREA </div> -->
+                   <!-- </div> --> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / END CONTACT DESIGN AREA -->
+   
+    
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div class="scroll-to-up">
+        <div class="scrollup">
+            <span class="fa fa-chevron-up"></span>
+        </div>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- LATEST JQUERY -->
+    <script src="jquery.min.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="bootstrap.min.js"></script>
+    <!-- OWL CAROUSEL JS  -->
+    <script src="owl.carousel.mini.js"></script>
+   
+<!-- scripts js -->
+    <script src="scripts.js"></script>
+    <script src="login-valid.js"></script>
+    <script>
+        
+         // Email Address Validation
+         var emailAddress= document.getElementById("email");;
+         var emailAddressValidation= function(){
+          emailAddressValue=emailAddress.value.trim(); 
+           validEmailAddress=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+           emailAddressErr=document.getElementById('email-err');
+           if(emailAddressValue=="")
+           {
+            emailAddressErr.innerHTML="Email Address is required";
+           }else if(!validEmailAddress.test(emailAddressValue)){
+             emailAddressErr.innerHTML="Email Addre must be in valid formate with @ symbol";
+           }else{
+             emailAddressErr.innerHTML="";
+             return true;
+           }
+         }
+        emailAddress.oninput=function(){
+           emailAddressValidation();
+        }
+         
+        // Password Validation
+        var password= document.getElementById("password");;
+        var passwordValidation = function(){
+          passwordValue=password.value.trim(); 
+           validPassword=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+           
+           passwordErr=document.getElementById('password-err');
+           if(passwordValue=="")
+           {
+            passwordErr.innerHTML="Password is required";
+           }else if(!validPassword.test(passwordValue)){
+             passwordErr.innerHTML="Password must have at least one Uppercase, lowercase, digit, special characters & 8 characters";
+           }
+           else{
+             passwordErr.innerHTML="";
+             return true;
+           }
+        }
+        password.oninput=function(){
+           passwordValidation();
+         
+           
+        }
+        // Confirm Password Validation
+       
+        // validation on submit
+        document.getElementById("loginform").onsubmit=function(e){
+          
+         
+          emailAddressValidation();
+          passwordValidation();
+          if(emailAddressValidation() == true && 
+            passwordValidation()==true){
+            return true;
+          }else{
+            return false;
+          }
+        }
+        
+          $(function () {
+              $("#password").bind("keyup", function () {
+                  //TextBox left blank.
+                  if ($(this).val().length == 0) {
+                      $("#password_strength").html("");
+                      return;
+                  }
+       
+                  //Regular Expressions.
+                  var regex = new Array();
+                  regex.push("[A-Z]"); //Uppercase Alphabet.
+                  regex.push("[a-z]"); //Lowercase Alphabet.
+                  regex.push("[0-9]"); //Digit.
+                  regex.push("[$@$!%*#?&]"); //Special Character.
+       
+                  var passed = 0;
+       
+                  //Validate for each Regular Expression.
+                  for (var i = 0; i < regex.length; i++) {
+                      if (new RegExp(regex[i]).test($(this).val())) {
+                          passed++;
+                      }
+                  }
+       
+       
+                  //Validate for length of Password.
+                  if (passed > 2 && $(this).val().length > 8) {
+                      passed++;
+                  }
+       
+                  //Display status.
+                  var color = "";
+                  var strength = "";
+                  switch (passed) {
+                      case 0:
+                      case 1:
+                          strength = "Poor";
+                          color = "red";
+                          break;
+                      case 2:
+                      case 3:  
+                          strength = "Medium";
+                          color = "darkorange";
+                          break;    
+                      case 4:   
+                      case 5: 
+                        strength = "Strong";
+                          color = "green";
+                          break;
+
+                          
+                  }
+                  $("#password_strength").html(strength);
+                  $("#password_strength").css("color", color);
+              });
+          });
+
+         
+    </script>
+</body>
+
+</html>

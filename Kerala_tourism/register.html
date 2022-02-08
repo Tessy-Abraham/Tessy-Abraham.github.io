@@ -1,0 +1,407 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- PAGE TITLE -->
+    <title>Kerala Tourism - Register</title>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- ALL GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,900" rel="stylesheet">
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="fonts/line-awesome-font-awesome.min.css">
+    <!-- OWL CAROSEL CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <!-- START PRELOADER AREA-->
+    <div class="preloader-area">
+        <div class="spinner">
+           
+            <h2>Kerala Tourism</h2>
+        </div>
+    </div>
+    <!-- END PRELOADER AREA -->
+    <!-- START CONTACT DESIGN AREA -->
+    <section id="contact" class="contact-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-lg-6 col-md-6 col-sm-12 contact-sec1">
+                    <!--<div class="row contact-form-design-area">-->
+                    <!-- <div class="col-md-offset-3 col-md-6 m-auto"> -->  
+                        <div class="section-title text-center mb-20">
+                            <h2>Register</h2>
+                            <div class="title-separator-outer ">
+                                <div class="title-separator bg-blue style-liner"></div>
+                            </div>
+                        </div>
+                        <!-- START CONTACT FORM DESIGN AREA -->
+                        <div class="login-form">
+                            <form id="registrationForm" name="reg-form" method="post" action="login.html">
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Enter First Name</label>
+                                        <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
+                                        <div id="first-name-err"></div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Enter Last Name</label>
+                                        <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
+                                        <div id="last-name-err"></div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Enter Email</label>
+                                        <input type="text" name="emailAddress" class="form-control" id="emailAddress" placeholder="Email">
+                                        <div id="email-err"></div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Enter Phone No</label>
+                                        <input type="text" name="mobileNumber" class="form-control" id="mobileNumber" placeholder="Phone Number">
+                                        <div id="mobile-number-err"></div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Enter Your Password</label>
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                                        <div id="password-err"></div>
+                                        <span id="password_strength"></span>
+                                        <!--<div class="input-group">
+                                          <div class="progress">
+                                              <div class="progress-bar" 
+                                                   role="progressbar" 
+                                                   aria-valuenow="0" 
+                                                   aria-valuemin="0" 
+                                                   aria-valuemax="100" 
+                                                   style="width:0%">
+                                              </div>
+                                          </div>
+                                      </div>-->
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Confirm Password</label>
+                                        <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                                        <div id="confirm-password-err"></div>
+                                        <span id="password_strength1"></span>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <a href="login.html">Already Registered? Login Now</a>
+                                    </div>
+                                    <div class="col-md-12 text-center login-btn mt-30">
+                                        <div class="actions wow fadeInUp" data-wow-delay=".4s">
+                                            <input type="submit" value="send message" name="submit" id="submitButton" class="" title="Submit Your Message!">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- / END CONTACT FORM DESIGN AREA </div> -->
+                   <!-- </div> --> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / END CONTACT DESIGN AREA -->
+   
+    
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div class="scroll-to-up">
+        <div class="scrollup">
+            <span class="fa fa-chevron-up"></span>
+        </div>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- LATEST JQUERY -->
+    <script src="jquery.min.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="bootstrap.min.js"></script>
+    <!-- OWL CAROUSEL JS  -->
+    <script src="owl.carousel.mini.js"></script>
+   
+    <script src="scripts.js"></script>
+     <script type="text/javascript">
+        // First Name Validation
+        var firstName= document.getElementById("firstName");
+        var firstNameValidation=function(){
+           firstNameValue=firstName.value.trim(); 
+           validFirstName=/^[A-Za-z]+$/;
+           firstNameErr=document.getElementById('first-name-err');
+           if(firstNameValue=="")
+           {
+            firstNameErr.innerHTML="First Name is required";
+           }else if(!validFirstName.test(firstNameValue)){
+             firstNameErr.innerHTML="First Name must be only string without white spaces";
+           }else{
+             firstNameErr.innerHTML="";
+             return true;
+            
+           }
+        }
+        firstName.oninput=function(){
+           
+           firstNameValidation();
+        }
+          // Last Name Validation
+          var lastName= document.getElementById("lastName");
+          var lastNameValidation= function(){
+           lastNameValue=lastName.value.trim(); 
+           validLastName=/^[A-Za-z]+$/;
+           lastNameErr=document.getElementById('last-name-err');
+           if(lastNameValue=="")
+           {
+            lastNameErr.innerHTML="Last Name is required";
+           }else if(!validLastName.test(lastNameValue)){
+             lastNameErr.innerHTML="Last Name must be only string without white spaces";
+           }else{
+             lastNameErr.innerHTML="";
+             return true;
+           }
+          }
+        lastName.oninput=function(){
+           lastNameValidation();
+        }
+         // Email Address Validation
+         var emailAddress= document.getElementById("emailAddress");;
+         var emailAddressValidation= function(){
+          emailAddressValue=emailAddress.value.trim(); 
+           validEmailAddress=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+           emailAddressErr=document.getElementById('email-err');
+           if(emailAddressValue=="")
+           {
+            emailAddressErr.innerHTML="Email Address is required";
+           }else if(!validEmailAddress.test(emailAddressValue)){
+             emailAddressErr.innerHTML="Email Addre must be in valid formate with @ symbol";
+           }else{
+             emailAddressErr.innerHTML="";
+             return true;
+           }
+         }
+        emailAddress.oninput=function(){
+           emailAddressValidation();
+        }
+         // Mobile Number Validation
+         var mobileNumber= document.getElementById("mobileNumber");
+         var mobileNumberValidation = function(){
+           mobileNumberValue=mobileNumber.value.trim(); 
+           validMobileNumber=/^[0-9]*$/;
+           let phoneFormat1 = /^([0-9]{3})-([0-9]{3})-([0-9]{4})$/;
+         let phoneFormat2 = /^([0-9]{3}).([0-9]{3}).([0-9]{4})$/;
+        let phoneFormat3 = /^([0-9]{3}) ([0-9]{3}) ([0-9]{4})$/;
+           mobileNumberErr=document.getElementById('mobile-number-err');
+           if(mobileNumberValue=="")
+           {
+            mobileNumberErr.innerHTML="Mobile Number is required";
+           }else if(!validMobileNumber.test(mobileNumberValue)){
+             mobileNumberErr.innerHTML="Mobile Number must be a number";
+           }else if(mobileNumberValue.length!=10){
+              mobileNumberErr.innerHTML="Mobile Number must have 10 digits";
+           }
+		   
+           else if(phoneFormat1.test(phone.value) || phoneFormat2.test(phone.value) || phoneFormat3.test(phone.value))
+           {
+            mobileNumberErr.innerHTML="Format Not Accept";
+           }
+           else{
+             mobileNumberErr.innerHTML="";
+             return true;
+           }
+         }
+        mobileNumber.oninput=function(){
+           mobileNumberValidation();
+        }
+        // Password Validation
+        var password= document.getElementById("password");;
+        var passwordValidation = function(){
+          passwordValue=password.value.trim(); 
+           validPassword=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+           
+           passwordErr=document.getElementById('password-err');
+           if(passwordValue=="")
+           {
+            passwordErr.innerHTML="Password is required";
+           }else if(!validPassword.test(passwordValue)){
+             passwordErr.innerHTML="Password must have at least one Uppercase, lowercase, digit, special characters & 8 characters";
+           }
+           else{
+             passwordErr.innerHTML="";
+             return true;
+           }
+        }
+        password.oninput=function(){
+           passwordValidation();
+         confirmPasswordValidation();
+           
+        }
+        // Confirm Password Validation
+        var confirmPassword= document.getElementById("confirmPassword");;
+        var confirmPasswordValidation=function(){
+           confirmPasswordValue=confirmPassword.value.trim(); 
+           
+           confirmPasswordErr=document.getElementById('confirm-password-err');
+           if(confirmPasswordValue==""){
+               confirmPasswordErr.innerHTML="Confirm Password is required";
+           }
+          else if(confirmPasswordValue!=password.value){
+             confirmPasswordErr.innerHTML="Confirm Password does not match";
+           }
+           else{
+             confirmPasswordErr.innerHTML="";
+             return true;
+           }
+        }
+        confirmPassword.oninput=function(){
+         confirmPasswordValidation();
+           
+        }
+        // validation on submit
+        document.getElementById("registrationForm").onsubmit=function(e){
+          
+          firstNameValidation();
+          lastNameValidation();
+          emailAddressValidation();
+          mobileNumberValidation();
+          passwordValidation();
+          confirmPasswordValidation();
+          if(firstNameValidation()==true && 
+            lastNameValidation()==true && 
+            emailAddressValidation() == true && 
+            mobileNumberValidation()==true && 
+            passwordValidation()==true && 
+            confirmPasswordValidation()==true){
+            return true;
+          }else{
+            return false;
+          }
+        }
+        
+        </script> 
+        <script type="text/javascript">
+          $(function () {
+              $("#password").bind("keyup", function () {
+                  //TextBox left blank.
+                  if ($(this).val().length == 0) {
+                      $("#password_strength").html("");
+                      return;
+                  }
+       
+                  //Regular Expressions.
+                  var regex = new Array();
+                  regex.push("[A-Z]"); //Uppercase Alphabet.
+                  regex.push("[a-z]"); //Lowercase Alphabet.
+                  regex.push("[0-9]"); //Digit.
+                  regex.push("[$@$!%*#?&]"); //Special Character.
+       
+                  var passed = 0;
+       
+                  //Validate for each Regular Expression.
+                  for (var i = 0; i < regex.length; i++) {
+                      if (new RegExp(regex[i]).test($(this).val())) {
+                          passed++;
+                      }
+                  }
+       
+       
+                  //Validate for length of Password.
+                  if (passed > 2 && $(this).val().length > 8) {
+                      passed++;
+                  }
+       
+                  //Display status.
+                  var color = "";
+                  var strength = "";
+                  switch (passed) {
+                      case 0:
+                      case 1:
+                          strength = "Poor";
+                          color = "red";
+                          break;
+                      case 2:
+                      case 3:  
+                          strength = "Medium";
+                          color = "darkorange";
+                          break;    
+                      case 4:   
+                      case 5: 
+                        strength = "Strong";
+                          color = "green";
+                          break;
+
+                          
+                  }
+                  $("#password_strength").html(strength);
+                  $("#password_strength").css("color", color);
+              });
+          });
+
+          $(function () {
+              $("#confirmPassword").bind("keyup", function () {
+                  //TextBox left blank.
+                  if ($(this).val().length == 0) {
+                      $("#password_strength1").html("");
+                      return;
+                  }
+       
+                  //Regular Expressions.
+                  var regex = new Array();
+                  regex.push("[A-Z]"); //Uppercase Alphabet.
+                  regex.push("[a-z]"); //Lowercase Alphabet.
+                  regex.push("[0-9]"); //Digit.
+                  regex.push("[$@$!%*#?&]"); //Special Character.
+       
+                  var passed = 0;
+       
+                  //Validate for each Regular Expression.
+                  for (var i = 0; i < regex.length; i++) {
+                      if (new RegExp(regex[i]).test($(this).val())) {
+                          passed++;
+                      }
+                  }
+       
+       
+                  //Validate for length of Password.
+                  if (passed > 2 && $(this).val().length > 8) {
+                      passed++;
+                  }
+       
+                  //Display status.
+                  var color = "";
+                  var strength = "";
+                  switch (passed) {
+                      case 0:
+                      case 1:
+                          strength = "Poor";
+                          color = "red";
+                          break;
+                      case 2:
+                      case 3:  
+                          strength = "Medium";
+                          color = "darkorange";
+                          break;    
+                      case 4:   
+                      case 5: 
+                        strength = "Strong";
+                          color = "green";
+                          break;
+
+                          
+                  }
+                  $("#password_strength1").html(strength);
+                  $("#password_strength1").css("color", color);
+              });
+          });
+      </script> 
+</body>
+
+</html>
